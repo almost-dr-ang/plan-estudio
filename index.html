@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Medicina Interactiva</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <h1>Malla Curricular Medicina</h1>
+  <div id="malla" class="grid-container">
+    <!-- Ejemplo de ramo -->
+    <div class="ramo" id="CBM25000" data-prereqs="">
+      <label><input type="checkbox" onchange="toggleRamo('CBM25000')" /> Anatomía I</label>
+    </div>
+
+    <div class="ramo" id="CBM25002" data-prereqs="CBM25000">
+      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25002')" /> Anatomía II</label>
+    </div>
+
+    <div class="ramo" id="CBM25004" data-prereqs="CBM25000">
+      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25004')" /> Fisiología I</label>
+    </div>
+
+    <div class="ramo" id="CBM25006" data-prereqs="CBM25004">
+      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25006')" /> Fisiología II</label>
+    </div>
+
+    <div class="ramo" id="CBM25009" data-prereqs="CBM25003,CBM25005,CBM25006,CBM25039">
+      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25009')" /> Patología I</label>
+    </div>
+    <!-- Puedes seguir este patrón para los demás ramos -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
