@@ -1,20 +1,25 @@
-function toggleRamo(ramoID) {
-  const checkbox = document.querySelector(`#${ramoID} input[type="checkbox"]`);
-  const aprobado = checkbox.checked;
+document.addEventListener('DOMContentLoaded', () => {
+  const ramos = document.querySelectorAll('.ramo');
 
-  // Revisar todos los ramos para ver si deben desbloquearse
-  document.querySelectorAll('.ramo').forEach(div => {
-    const prereqs = div.dataset.prereqs;
-    if (!prereqs) return;
+  ramos.forEach(boton => {
+    boton.addEventListener('click', () => {
+      // Evita que se interactúe con ramos bloqueados
+      if (boton.classList.contains('bloqueado') || boton.classList.contains('aprobado')) return;
 
-    const prereqArray = prereqs.split(',');
-    const fulfilled = prereqArray.every(id => {
-      const cb = document.querySelector(`#${id} input[type="checkbox"]`);
-      return cb && cb.checked;
+      // Marca como aprobado
+      boton.classList.add('aprobado');
+
+      // Obtiene los IDs de los ramos que se desbloquean
+      const targets = boton.dataset.targets;
+      if (targets) {
+        const ids = targets.split(',').map(id => id.trim());
+        ids.forEach(id => {
+          const siguiente = document.querySelector(`.ramo[data-id="${id}"]`);
+          if (siguiente && siguiente.classList.contains('bloqueado')) {
+            siguiente.classList.remove('bloqueado');
+          }
+        });
+      }
     });
-
-    const input = div.querySelector('input[type="checkbox"]');
-    input.disabled = !fulfilled;
   });
-}
-
+});
