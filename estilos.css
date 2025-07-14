@@ -43,19 +43,25 @@ h1 {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 💫 SOMBRA */
 }
 
 .ramo:hover {
   background-color: #6a9ed2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .ramo.aprobado {
   background-color: #7ed957;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
 }
 
 .ramo.bloqueado {
   background-color: #cccccc;
+  color: #666;
   cursor: not-allowed;
   pointer-events: none;
+  box-shadow: none;
 }
