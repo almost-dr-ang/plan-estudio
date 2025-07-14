@@ -2,34 +2,116 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Medicina Interactiva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Medicina</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <h1>Malla Curricular Medicina</h1>
-  <div id="malla" class="grid-container">
-    <!-- Ejemplo de ramo -->
-    <div class="ramo" id="CBM25000" data-prereqs="">
-      <label><input type="checkbox" onchange="toggleRamo('CBM25000')" /> Anatomía I</label>
+  <h1>Malla Curricular - Medicina</h1>
+  <div class="malla">
+    <!-- MALLA COMPLETA PEGADA AQUÍ -->
+    <!-- ⚠️ Sigue en el siguiente mensaje por límite de caracteres -->
+    <div class="semestre" id="semestre-1">
+      <h2>1° Semestre</h2>
+      <button class="ramo" data-id="anatomia" data-targets="anatomia2">Anatomía</button>
+      <button class="ramo" data-id="embriologia" data-targets="genetica">Embriología</button>
+      <button class="ramo" data-id="bioquimica" data-targets="bioquimica2,biocelular">Bioquímica</button>
+      <button class="ramo" data-id="comunicacion1" data-targets="comunicacion2">Comunicación Escrita I</button>
+      <button class="ramo" data-id="logica" data-targets="economia">Lógica y Argumentación</button>
     </div>
 
-    <div class="ramo" id="CBM25002" data-prereqs="CBM25000">
-      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25002')" /> Anatomía II</label>
+    <div class="semestre" id="semestre-2">
+      <h2>2° Semestre</h2>
+      <button class="ramo bloqueado" data-id="anatomia2" data-targets="semiologia1">Anatomía II</button>
+      <button class="ramo" data-id="histologia" data-targets="patologia1">Histología</button>
+      <button class="ramo bloqueado" data-id="bioquimica2" data-targets="biomolecular,inmunologia,genetica">Bioquímica II</button>
+      <button class="ramo bloqueado" data-id="biocelular" data-targets="biomolecular,microbiologia">Biología Celular</button>
+      <button class="ramo" data-id="fisiologia1" data-targets="fisiologia2">Fisiología I</button>
+      <button class="ramo" data-id="razonamiento" data-targets="bioestadistica">Razonamiento Cuantitativo</button>
+      <button class="ramo bloqueado" data-id="comunicacion2" data-targets="psicologia,humanidades1,humanidades2,liderazgo">Comunicación Escrita II</button>
     </div>
 
-    <div class="ramo" id="CBM25004" data-prereqs="CBM25000">
-      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25004')" /> Fisiología I</label>
+    <div class="semestre" id="semestre-3">
+      <h2>3° Semestre</h2>
+      <button class="ramo bloqueado" data-id="biomolecular" data-targets="inmunologia,farmacologia1">Biología Molecular</button>
+      <button class="ramo bloqueado" data-id="microbiologia" data-targets="patologia1,farmacologia1">Microbiología</button>
+      <button class="ramo bloqueado" data-id="genetica" data-targets="patologia1,farmacologia1,toxicologia">Genética</button>
+      <button class="ramo bloqueado" data-id="fisiologia2" data-targets="patologia1,farmacologia1,semiologia1">Fisiología II</button>
+      <button class="ramo" data-id="organizaciones">Organizaciones</button>
+      <button class="ramo bloqueado" data-id="economia">Principios de Economía</button>
     </div>
 
-    <div class="ramo" id="CBM25006" data-prereqs="CBM25004">
-      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25006')" /> Fisiología II</label>
+    <div class="semestre" id="semestre-4">
+      <h2>4° Semestre</h2>
+      <button class="ramo bloqueado" data-id="bioestadistica">Bioestadística</button>
+      <button class="ramo bloqueado" data-id="patologia1" data-targets="patologia2">Patología I</button>
+      <button class="ramo bloqueado" data-id="psicologia" data-targets="psicopatologia">Psicología</button>
+      <button class="ramo bloqueado" data-id="farmacologia1" data-targets="farmacologia2,toxicologia">Farmacología I</button>
+      <button class="ramo bloqueado" data-id="inmunologia">Inmunología</button>
+      <button class="ramo bloqueado" data-id="semiologia1" data-targets="semiologia2">Semiología I</button>
     </div>
 
-    <div class="ramo" id="CBM25009" data-prereqs="CBM25003,CBM25005,CBM25006,CBM25039">
-      <label><input type="checkbox" disabled onchange="toggleRamo('CBM25009')" /> Patología I</label>
+        <div class="semestre" id="semestre-5">
+      <h2>5° Semestre</h2>
+      <button class="ramo bloqueado" data-id="psicopatologia" data-targets="medicina">Psicopatología</button>
+      <button class="ramo bloqueado" data-id="patologia2" data-targets="medicina">Patología II</button>
+      <button class="ramo bloqueado" data-id="epidemiologia" data-targets="medicina,metodologia,saludpublica">Epidemiología</button>
+      <button class="ramo bloqueado" data-id="farmacologia2" data-targets="medicina">Farmacología II</button>
+      <button class="ramo bloqueado" data-id="toxicologia" data-targets="medicina">Toxicología y Salud Ambiental</button>
+      <button class="ramo bloqueado" data-id="semiologia2" data-targets="medicina">Semiología II</button>
+      <button class="ramo" data-id="etica" data-targets="medicina,reanimacion,psiquiatria1,pediatria">Electiva en Ética</button>
     </div>
-    <!-- Puedes seguir este patrón para los demás ramos -->
+
+    <div class="semestre" id="semestre-6">
+      <h2>6° Semestre</h2>
+      <button class="ramo bloqueado" data-id="medicina" data-targets="reanimacion,psiquiatria1,pediatria">Medicina Interna</button>
+      <button class="ramo bloqueado" data-id="reanimacion">Reanimación Cardiopulmonar</button>
+      <button class="ramo" data-id="derecho1" data-targets="derecho2">Fundamentos de Derecho</button>
+    </div>
+
+    <div class="semestre" id="semestre-7">
+      <h2>7° Semestre</h2>
+      <button class="ramo bloqueado" data-id="pediatria" data-targets="gineco,metodologia">Pediatría</button>
+      <button class="ramo bloqueado" data-id="psiquiatria1" data-targets="psiquiatria2">Psiquiatría I</button>
+      <button class="ramo bloqueado" data-id="humanidades1">Electiva en Humanidades I</button>
+    </div>
+
+    <div class="semestre" id="semestre-8">
+      <h2>8° Semestre</h2>
+      <button class="ramo bloqueado" data-id="metodologia" data-targets="grado1">Metodología de Investigación</button>
+      <button class="ramo bloqueado" data-id="psiquiatria2" data-targets="geriatria,cirugia">Psiquiatría II</button>
+      <button class="ramo bloqueado" data-id="gineco" data-targets="geriatria,cirugia">Ginecología - Obstetricia</button>
+      <button class="ramo bloqueado" data-id="liderazgo">Liderazgo</button>
+      <button class="ramo bloqueado" data-id="humanidades2">Electiva en Humanidades II</button>
+    </div>
+
+        <div class="semestre" id="semestre-9">
+      <h2>9° Semestre</h2>
+      <button class="ramo bloqueado" data-id="geriatria" data-targets="derecho2,especiales,saludocupacional">Geriatría y Medicina Familiar</button>
+      <button class="ramo bloqueado" data-id="saludpublica" data-targets="derecho2,saludocupacional">Salud Pública</button>
+      <button class="ramo bloqueado" data-id="cirugia" data-targets="derecho2,especiales">Cirugía</button>
+      <button class="ramo bloqueado" data-id="grado1" data-targets="grado2">Trabajo de Grado I</button>
+    </div>
+
+    <div class="semestre" id="semestre-10">
+      <h2>10° Semestre</h2>
+      <button class="ramo bloqueado" data-id="derecho2" data-targets="internado">Derecho Médico</button>
+      <button class="ramo bloqueado" data-id="saludocupacional" data-targets="internado">Salud Ocupacional</button>
+      <button class="ramo bloqueado" data-id="gestion" data-targets="internado">Gestión en Salud</button>
+      <button class="ramo bloqueado" data-id="especiales" data-targets="internado">Otorino, Oftalmo, Orto, Uro, Neurociencias</button>
+      <button class="ramo bloqueado" data-id="grado2" data-targets="grado3,internado">Trabajo de Grado II</button>
+    </div>
+
+    <div class="semestre" id="semestre-11">
+      <h2>11° Semestre</h2>
+      <button class="ramo bloqueado" data-id="internado" data-targets="flexible">Internado Rotatorio</button>
+      <button class="ramo bloqueado" data-id="grado3">Trabajo de Grado III</button>
+    </div>
+
+    <div class="semestre" id="semestre-12">
+      <h2>12° Semestre</h2>
+      <button class="ramo bloqueado" data-id="flexible">Internado Flexible</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
